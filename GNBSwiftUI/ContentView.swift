@@ -8,9 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    let items = ["A List Item", "A Second List Item", "A Third List Item"]
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        List(items, id:\.self) { item in
+            ItemCell(text: item)
+        }
+    }
+}
+
+struct ItemCell: View {
+    let text: String
+    var body: some View {
+        Text(text)
     }
 }
 
